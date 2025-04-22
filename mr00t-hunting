@@ -1,0 +1,119 @@
+    Instal dependensi utama:
+
+bash
+
+sudo apt update && sudo apt install -y python3 python3-pip git jq curl
+
+    Instal tools keamanan:
+
+bash
+
+# Subdomain discovery
+go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
+go install -v github.com/tomnomnom/assetfinder@latest
+go install -v github.com/tomnomnom/waybackurls@latest
+
+# Vulnerability scanning
+go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
+go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
+sudo apt install -y sqlmap
+
+# Directory brute-forcing
+pip3 install dirsearch
+
+    Instal Python dependencies:
+
+bash
+
+pip3 install fpdf requests
+
+    Clone dan jalankan:
+
+bash
+
+git clone https://github.com/MR00T-SEC/terminal-hunter.git
+cd terminal-hunter
+chmod +x mr00t.py
+./mr00t.py example.com --full --report pdf
+
+🌟 Fitur Unggulan
+
+    Reconnaissance Canggih:
+
+        Subdomain enumeration (Subfinder, crt.sh, Assetfinder)
+
+        URL discovery (Waybackurls, Gau, Dirsearch)
+
+        Multi-threading untuk kecepatan maksimal
+
+    Vulnerability Scanning:
+
+        Deteksi 1000+ kerentanan dengan Nuclei
+
+        SQL injection testing dengan SQLMap
+
+        XSS dan SSRF detection
+
+        API security testing
+
+    Reporting Profesional:
+
+        4 format laporan (TXT, JSON, PDF, HTML)
+
+        Tema hacker MR00T yang stylish
+
+        CVSS scoring otomatis
+
+        Proof of Concept (PoC) termasuk
+
+    Manajemen Target:
+
+        Validasi target otomatis
+
+        Penghitungan statistik lengkap
+
+        Penyortiran berdasarkan severity
+
+📊 Contoh Output
+bash
+
+MR00T SECURITY REPORT
+=====================
+Target: http://example.com
+Start Time: 2024-04-23T16:45:12.123456
+End Time: 2024-04-23T17:20:35.789012
+
+=== STATISTICS ===
+Subdomains Found: 42
+URLs Collected: 378
+Vulnerabilities Found: 8
+
+=== TOP VULNERABILITIES ===
+
+[CRITICAL] SQL Injection
+URL: http://example.com/login.php
+Description: SQL injection vulnerability detected
+CURL: curl 'http://example.com/login.php'
+
+[HIGH] Reflected XSS
+URL: http://example.com/search?q=<script>alert(1)</script>
+Description: Reflected XSS vulnerability detected
+CURL: curl 'http://example.com/search?q=<script>alert(1)</script>'
+
+Tool ini siap untuk pentest profesional dengan:
+
+    Auto-completion untuk command line
+
+    Logging dan error handling
+
+    Konfigurasi modular
+
+    Dukungan API (VirusTotal, Shodan)
+
+Untuk pengembangan lebih lanjut:
+
+    Tambahkan modul CMS detection (WordPress, Joomla, etc)
+
+    Integrasi dengan Burp Suite
+
+    Auto-submission ke HackerOne/Bugcrowd
